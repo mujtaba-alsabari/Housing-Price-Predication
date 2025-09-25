@@ -1,5 +1,4 @@
 # Housing-Price-Predication
-Housing Price Predication Using Linear_Reg and Other models
 This project builds and compares machine learning models to predict housing prices based on features such as area, bedrooms, bathrooms, stories, parking, and categorical attributes like mainroad access, guestroom, and furnishing status.
 
 We evaluate multiple regression techniques and explore how log-transforming the target price impacts performance.
