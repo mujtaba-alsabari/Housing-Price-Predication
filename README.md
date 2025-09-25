@@ -1,40 +1,67 @@
 # Housing-Price-Predication
 Housing Price Predication Using Linear_Reg and Other models
-Housing Price Prediction – Conclusion
-Model Comparison
+This project builds and compares machine learning models to predict housing prices based on features such as area, bedrooms, bathrooms, stories, parking, and categorical attributes like mainroad access, guestroom, and furnishing status.
 
-Linear Regression with log(price) performed the best overall:
+We evaluate multiple regression techniques and explore how log-transforming the target price impacts performance.
 
-Lowest MAE and RMSE
+Dataset
 
-Highest R² (~0.69, explaining ~70% of variance)
+The dataset includes the following key features:
 
-Lowest MAPE (~15%), meaning predictions are on average within 15% of the true price
+Numerical Features:
 
-Random Forest models underperformed:
+area, bedrooms, bathrooms, stories, parking
 
-R² stuck around 0.49–0.52
+Categorical Features:
 
-Larger errors (MAE > 820K, MAPE > 17%)
+mainroad, guestroom, basement, hotwaterheating, airconditioning, prefarea, furnishingstatus
 
-XGBoost showed moderate performance:
+Target Variable:
 
-Better than Random Forest but still weaker than Linear Regression
+price
 
-R² ~0.53 (no log) and ~0.52 (with log)
+Models Trained
 
-Key Insights
+Linear Regression
 
-Log-transforming the target price improves model performance for both Linear Regression and Random Forest.
+With and without log(price)
 
-Linear Regression is surprisingly strong: simple, interpretable, and effective for this dataset.
+Random Forest Regressor
 
-Tree-based models (RF, XGB) may require deeper hyperparameter tuning or more data to outperform LR.
+With and without log(price)
 
-Feature importance (from correlation and scatterplots):
+XGBoost Regressor
 
-Area has the strongest positive correlation with price.
+With and without log(price)
 
-Features like bathrooms, stories, air conditioning, and prefarea also push prices upward.
+Best Model: Linear Regression with log(price)
 
-Categorical features such as mainroad access and guestroom availability show clear price differences in boxplots.
+R² ~ 0.69
+
+MAE ~ 672K
+
+Predictions within ~15% error on average
+
+Exploratory Data Analysis (EDA)
+
+Correlation analysis shows area has the strongest positive correlation with price.
+
+Scatter plots with trend lines reveal linear relationships between area, bathrooms, stories, and price.
+
+Boxplots indicate higher prices for houses with:
+
+Access to mainroad
+
+Guestroom
+
+Air conditioning
+
+Located in preferred areas
+
+Conclusion & Recommendation
+
+Linear Regression with log-transformed price is the recommended deployment model.
+
+It outperforms Random Forest and XGBoost on this dataset, balancing accuracy, interpretability, and efficiency.
+
+Tree-based models may improve with hyperparameter tuning, but LR currently provides the most reliable results.
